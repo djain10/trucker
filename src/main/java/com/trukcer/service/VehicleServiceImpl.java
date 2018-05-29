@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,12 +18,20 @@ public class VehicleServiceImpl implements VehicleService {
     VehicleRepository repository;
 
     @Transactional
-    public Vehicle create(Vehicle vehicle) {
-        Optional<Vehicle> existing = repository.findById(vehicle.getVin());
-       // if(existing.isPresent()){
-            return repository.save(vehicle);
-        //}
+    public void create(List <Vehicle> vehicles) {
+           vehicles = new ArrayList<Vehicle>();
 
-        //return repository.save(vehicle);
+           /*for(int i =0; i < vehicles.size(); i++){
+               repository.save(vehicles.get(i));
+           }*/
+        for(Vehicle v : vehicles){
+                repository.save(v);
+        }
+           // return repository.findAll();
+    }
+
+
+    public List<Vehicle> findAll() {
+        return repository.findAll();
     }
 }

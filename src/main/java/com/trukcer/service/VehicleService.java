@@ -7,8 +7,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-@Service
 public interface VehicleService {
 
-    Vehicle create(Vehicle vehicle);
+    void create(List <Vehicle> vehicles);
+    public  List<Vehicle> findAll();
 }
