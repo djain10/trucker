@@ -22,12 +22,14 @@ public class VehicleController {
 
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public void create(@RequestBody List<Vehicle> vehicles){
-         service.create(vehicles);
+    public List<Vehicle> create(@RequestBody List<Vehicle> vehicles){
+        return service.create(vehicles);
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.POST)
 
+
+    @RequestMapping(method = RequestMethod.GET)
     public List<Vehicle> findAll() {
         return service.findAll();
     }

@@ -1,5 +1,6 @@
 package com.trukcer.service;
 
+import com.trukcer.entity.Readings;
 import com.trukcer.entity.Vehicle;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +10,7 @@ import java.util.List;
 
 public interface VehicleService {
 
-    void create(List <Vehicle> vehicles);
+    List<Vehicle> create(List <Vehicle> vehicles);
+    void vehicleReadingDetails(Readings reading);
     public  List<Vehicle> findAll();
 }

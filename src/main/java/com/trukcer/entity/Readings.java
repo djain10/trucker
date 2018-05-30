@@ -1,32 +1,51 @@
 package com.trukcer.entity;
 
-import org.hibernate.annotations.ForeignKey;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.util.UUID;
 
-
+@Entity
 public class Readings {
 
-
-    String vin;
+    private String id;
+    @JsonProperty("vin")
+    Vehicle vin;
     String latitude;
     String longitude;
     String timestamp;
     double fuelVolume;
     int speed;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Vehicle getVin() {
+        return vin;
+    }
+
+    public void setVin(Vehicle vin) {
+        this.vin = vin;
+    }
+
     int engineHp;
     boolean checkEngineLightOn;
     boolean engineCoolantLow;
     int engineRpm;
-    Tries tries;
+    Tires tires;
 
-    public String getVin() {
-        return vin;
+    public Readings() {
+        this.id = UUID.randomUUID()
+                .toString();
     }
 
-    public void setVin(String vin) {
-        this.vin = vin;
-    }
+
 
     public String getLatitude() {
         return latitude;
@@ -100,11 +119,11 @@ public class Readings {
         this.engineRpm = engineRpm;
     }
 
-    public Tries getTries() {
-        return tries;
+    public Tires getTires() {
+        return tires;
     }
 
-    public void setTries(Tries tries) {
-        this.tries = tries;
+    public void setTires(Tires tires) {
+        this.tires = tires;
     }
 }

@@ -1,6 +1,6 @@
 package com.trukcer.entity;
 
-public class Tries {
+public class Tires {
 
     int frontLeft;
     int frontRight;

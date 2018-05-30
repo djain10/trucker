@@ -1,5 +1,6 @@
 package com.trukcer.service;
 
+import com.trukcer.entity.Readings;
 import com.trukcer.entity.Vehicle;
 import com.trukcer.repository.VehicleRepository;
 
@@ -18,18 +19,14 @@ public class VehicleServiceImpl implements VehicleService {
     VehicleRepository repository;
 
     @Transactional
-    public void create(List <Vehicle> vehicles) {
-           vehicles = new ArrayList<Vehicle>();
-
-           /*for(int i =0; i < vehicles.size(); i++){
-               repository.save(vehicles.get(i));
-           }*/
-        for(Vehicle v : vehicles){
-                repository.save(v);
-        }
-           // return repository.findAll();
+    public List<Vehicle> create(List <Vehicle> vehicles) {
+                repository.saveAll(vehicles);
+            return repository.findAll();
     }
 
+    public void vehicleReadingDetails(Readings reading) {
+
+    }
 
     public List<Vehicle> findAll() {
         return repository.findAll();
