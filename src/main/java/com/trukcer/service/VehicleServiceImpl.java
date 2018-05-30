@@ -21,11 +21,8 @@ public class VehicleServiceImpl implements VehicleService {
     @Transactional
     public List<Vehicle> create(List <Vehicle> vehicles) {
                 repository.saveAll(vehicles);
+
             return repository.findAll();
-    }
-
-    public void vehicleReadingDetails(Readings reading) {
-
     }
 
     public List<Vehicle> findAll() {

@@ -11,6 +11,5 @@ import java.util.List;
 public interface VehicleService {
 
     List<Vehicle> create(List <Vehicle> vehicles);
-    void vehicleReadingDetails(Readings reading);
     public  List<Vehicle> findAll();
 }

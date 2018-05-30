@@ -1,7 +1,5 @@
 package com.trukcer.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,8 +11,8 @@ public class Readings {
 
     @Id
     @Column(columnDefinition = "VARCHAR(36)")
-    private String id;
-    Vehicle vin;
+    String id;
+    String vin;
     String latitude;
     String longitude;
     String timestamp;
@@ -27,104 +25,104 @@ public class Readings {
     @OneToOne
     Tires tires;
 
-    private Readings() {
+     Readings() {
         this.id = UUID.randomUUID()
                 .toString();
     }
 
-    private String getId() {
+    public String getId() {
         return id;
     }
 
-    private void setId(String id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    private Vehicle getVin() {
+    public String getVin() {
         return vin;
     }
 
-    private void setVin(Vehicle vin) {
+    public void setVin(String vin) {
         this.vin = vin;
     }
 
-    private String getLatitude() {
+    public String getLatitude() {
         return latitude;
     }
 
-    private void setLatitude(String latitude) {
+    public void setLatitude(String latitude) {
         this.latitude = latitude;
     }
 
-    private String getLongitude() {
+    public String getLongitude() {
         return longitude;
     }
 
-    private void setLongitude(String longitude) {
+    public void setLongitude(String longitude) {
         this.longitude = longitude;
     }
 
-    private String getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 
-    private void setTimestamp(String timestamp) {
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 
-    private double getFuelVolume() {
+    public double getFuelVolume() {
         return fuelVolume;
     }
 
-    private void setFuelVolume(double fuelVolume) {
+    public void setFuelVolume(double fuelVolume) {
         this.fuelVolume = fuelVolume;
     }
 
-    private int getSpeed() {
+    public int getSpeed() {
         return speed;
     }
 
-    private void setSpeed(int speed) {
+    public void setSpeed(int speed) {
         this.speed = speed;
     }
 
-    private int getEngineHp() {
+    public int getEngineHp() {
         return engineHp;
     }
 
-    private void setEngineHp(int engineHp) {
+    public void setEngineHp(int engineHp) {
         this.engineHp = engineHp;
     }
 
-    private boolean isCheckEngineLightOn() {
+    public boolean isCheckEngineLightOn() {
         return checkEngineLightOn;
     }
 
-    private void setCheckEngineLightOn(boolean checkEngineLightOn) {
+    public void setCheckEngineLightOn(boolean checkEngineLightOn) {
         this.checkEngineLightOn = checkEngineLightOn;
     }
 
-    private boolean isEngineCoolantLow() {
+    public boolean isEngineCoolantLow() {
         return engineCoolantLow;
     }
 
-    private void setEngineCoolantLow(boolean engineCoolantLow) {
+    public void setEngineCoolantLow(boolean engineCoolantLow) {
         this.engineCoolantLow = engineCoolantLow;
     }
 
-    private int getEngineRpm() {
+    public int getEngineRpm() {
         return engineRpm;
     }
 
-    private void setEngineRpm(int engineRpm) {
+    public void setEngineRpm(int engineRpm) {
         this.engineRpm = engineRpm;
     }
 
-    private Tires getTires() {
+    public Tires getTires() {
         return tires;
     }
 
-    private void setTires(Tires tires) {
+    public void setTires(Tires tires) {
         this.tires = tires;
     }
 }

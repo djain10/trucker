@@ -9,7 +9,6 @@ import java.util.UUID;
 public class Tires {
 
     @Id
-
     @Column(columnDefinition = "VARCHAR(36)")
     String id;
     int frontLeft;

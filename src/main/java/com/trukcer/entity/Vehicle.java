@@ -15,59 +15,59 @@ public class Vehicle {
     int maxFuelVolume;
     String lastServiceDate;
 
-    private String getVin() {
+    public String getVin() {
         return vin;
     }
 
-    private void setVin(String vin) {
+    public void setVin(String vin) {
         this.vin = vin;
     }
 
-    private String getMake() {
+    public String getMake() {
         return make;
     }
 
-    private void setMake(String make) {
+    public void setMake(String make) {
         this.make = make;
     }
 
-    private String getModel() {
+    public String getModel() {
         return model;
     }
 
-    private void setModel(String model) {
+    public void setModel(String model) {
         this.model = model;
     }
 
-    private int getYear() {
+    public int getYear() {
         return year;
     }
 
-    private void setYear(int year) {
+    public void setYear(int year) {
         this.year = year;
     }
 
-    private int getRedlineRpm() {
+    public int getRedlineRpm() {
         return redlineRpm;
     }
 
-    private void setRedlineRpm(int redlineRpm) {
+    public void setRedlineRpm(int redlineRpm) {
         this.redlineRpm = redlineRpm;
     }
 
-    private int getMaxFuelVolume() {
+    public int getMaxFuelVolume() {
         return maxFuelVolume;
     }
 
-    private void setMaxFuelVolume(int maxFuelVolume) {
+    public void setMaxFuelVolume(int maxFuelVolume) {
         this.maxFuelVolume = maxFuelVolume;
     }
 
-    private String getLastServiceDate() {
+    public String getLastServiceDate() {
         return lastServiceDate;
     }
 
-    private void setLastServiceDate(String lastServiceDate) {
+    public void setLastServiceDate(String lastServiceDate) {
         this.lastServiceDate = lastServiceDate;
     }
 
