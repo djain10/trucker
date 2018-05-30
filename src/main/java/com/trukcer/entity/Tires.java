@@ -1,41 +1,64 @@
 package com.trukcer.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.util.UUID;
+
+@Entity
 public class Tires {
 
+    @Id
+
+    @Column(columnDefinition = "VARCHAR(36)")
+    String id;
     int frontLeft;
     int frontRight;
     int rearLeft;
     int rearRight;
 
-    public int getFrontLeft() {
+    public Tires() {
+        this.id = UUID.randomUUID()
+                .toString();
+    }
+
+    private String getId() {
+        return id;
+    }
+
+    private void setId(String id) {
+        this.id = id;
+    }
+
+    private int getFrontLeft() {
         return frontLeft;
     }
 
-    public void setFrontLeft(int frontLeft) {
+    private void setFrontLeft(int frontLeft) {
         this.frontLeft = frontLeft;
     }
 
-    public int getFrontRight() {
+    private int getFrontRight() {
         return frontRight;
     }
 
-    public void setFrontRight(int frontRight) {
+    private void setFrontRight(int frontRight) {
         this.frontRight = frontRight;
     }
 
-    public int getRearLeft() {
+    private int getRearLeft() {
         return rearLeft;
     }
 
-    public void setRearLeft(int rearLeft) {
+    private void setRearLeft(int rearLeft) {
         this.rearLeft = rearLeft;
     }
 
-    public int getRearRight() {
+    private int getRearRight() {
         return rearRight;
     }
 
-    public void setRearRight(int rearRight) {
+    private void setRearRight(int rearRight) {
         this.rearRight = rearRight;
     }
 }

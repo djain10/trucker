@@ -26,7 +26,7 @@ public class VehicleController {
         return service.create(vehicles);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+  //  @RequestMapping(method = RequestMethod.POST)
 
 
     @RequestMapping(method = RequestMethod.GET)

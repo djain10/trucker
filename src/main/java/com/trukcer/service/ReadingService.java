@@ -1,4 +1,8 @@
 package com.trukcer.service;
 
-public class ReadingService {
+import com.trukcer.entity.Readings;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ReadingService {
+    void storeReadings(Readings readings);
 }
