@@ -18,13 +18,12 @@ public class ReadingServiceImpl implements ReadingService {
     VehicleRepository vehicleRepository;
 
     public Readings storeReadings(Readings readings) {
-        Optional<Vehicle> existing = vehicleRepository.findById(readings.getVin());
-        System.out.println(readings.getVin());
-
+        Optional<Vehicle> existing = vehicleRepository.findById(readings.getVin().getVin());
         if (!existing.isPresent()) {
-            throw new ResourceNotFoundException("Vehicle with id " + readings.getVin() + " doesn't exist.");
+           throw new ResourceNotFoundException("Vehicle with id " + readings.getVin() + " doesn't exist.");
         }
         System.out.println(readings.getVin());
-        return repository.save(readings);
+        readings.setVin(existing.get());
+         return repository.save(readings);
     }
 }

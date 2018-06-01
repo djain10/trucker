@@ -1,9 +1,11 @@
 package com.trukcer.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.CreationTimestamp;
+
+import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -11,19 +13,23 @@ public class Readings {
 
     @Id
     @Column(columnDefinition = "VARCHAR(36)")
-    String id;
-    String vin;
-    String latitude;
-    String longitude;
-    String timestamp;
-    double fuelVolume;
-    int speed;
-    int engineHp;
-    boolean checkEngineLightOn;
-    boolean engineCoolantLow;
-    int engineRpm;
-    @OneToOne
-    Tires tires;
+    private String id;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "vehicle_vin")
+    private Vehicle vin;
+    private String latitude;
+    private String longitude;
+    @CreationTimestamp
+    private LocalDateTime timestamp;
+    private double fuelVolume;
+    private int speed;
+    private int engineHp;
+    private boolean checkEngineLightOn;
+    private boolean engineCoolantLow;
+    private boolean cruiseControlOn;
+    private int engineRpm;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Tires tires;
 
      Readings() {
         this.id = UUID.randomUUID()
@@ -38,11 +44,11 @@ public class Readings {
         this.id = id;
     }
 
-    public String getVin() {
+    public Vehicle getVin() {
         return vin;
     }
 
-    public void setVin(String vin) {
+    public void setVin(Vehicle vin) {
         this.vin = vin;
     }
 
@@ -62,11 +68,11 @@ public class Readings {
         this.longitude = longitude;
     }
 
-    public String getTimestamp() {
+    public LocalDateTime getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(String timestamp) {
+    public void setTimestamp(LocalDateTime timestamp) {
         this.timestamp = timestamp;
     }
 
@@ -108,6 +114,14 @@ public class Readings {
 
     public void setEngineCoolantLow(boolean engineCoolantLow) {
         this.engineCoolantLow = engineCoolantLow;
+    }
+
+    public boolean isCruiseControlOn() {
+        return cruiseControlOn;
+    }
+
+    public void setCruiseControlOn(boolean cruiseControlOn) {
+        this.cruiseControlOn = cruiseControlOn;
     }
 
     public int getEngineRpm() {

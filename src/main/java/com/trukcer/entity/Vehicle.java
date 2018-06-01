@@ -1,7 +1,10 @@
 package com.trukcer.entity;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
 
 @Entity
 public class Vehicle {
@@ -13,7 +16,16 @@ public class Vehicle {
     int year;
     int redlineRpm;
     int maxFuelVolume;
-    String lastServiceDate;
+    @CreationTimestamp
+    LocalDateTime lastServiceDate;
+
+    public Vehicle(String vin) {
+        this.vin = vin;
+    }
+
+    public Vehicle() {
+
+    }
 
     public String getVin() {
         return vin;
@@ -63,11 +75,12 @@ public class Vehicle {
         this.maxFuelVolume = maxFuelVolume;
     }
 
-    public String getLastServiceDate() {
+    public LocalDateTime getLastServiceDate() {
         return lastServiceDate;
     }
 
-    public void setLastServiceDate(String lastServiceDate) {
+
+    public void setLastServiceDate(LocalDateTime lastServiceDate) {
         this.lastServiceDate = lastServiceDate;
     }
 
