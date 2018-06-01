@@ -3,9 +3,11 @@ package com.trukcer.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.UUID;
 
 @Entity
+
 public class Tires {
 
     @Id
