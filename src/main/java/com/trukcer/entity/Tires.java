@@ -18,35 +18,35 @@ public class Tires {
                 .toString();
     }
 
-    private int getFrontLeft() {
+    public int getFrontLeft() {
         return frontLeft;
     }
 
-    private void setFrontLeft(int frontLeft) {
+    public void setFrontLeft(int frontLeft) {
         this.frontLeft = frontLeft;
     }
 
-    private int getFrontRight() {
+    public int getFrontRight() {
         return frontRight;
     }
 
-    private void setFrontRight(int frontRight) {
+    public void setFrontRight(int frontRight) {
         this.frontRight = frontRight;
     }
 
-    private int getRearLeft() {
+    public int getRearLeft() {
         return rearLeft;
     }
 
-    private void setRearLeft(int rearLeft) {
+    public void setRearLeft(int rearLeft) {
         this.rearLeft = rearLeft;
     }
 
-    private int getRearRight() {
+    public int getRearRight() {
         return rearRight;
     }
 
-    private void setRearRight(int rearRight) {
+    public void setRearRight(int rearRight) {
         this.rearRight = rearRight;
     }
 }

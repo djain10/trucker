@@ -18,6 +18,7 @@ public class VehicleServiceImpl implements VehicleService {
     @Autowired
     VehicleRepository repository;
 
+    @Override
     @Transactional
     public List<Vehicle> create(List <Vehicle> vehicles) {
                 repository.saveAll(vehicles);

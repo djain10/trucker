@@ -1,6 +1,7 @@
 package com.trukcer.controller;
 
 import com.trukcer.entity.Readings;
+import com.trukcer.service.AlertService;
 import com.trukcer.service.ReadingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -15,11 +16,14 @@ public class ReadingController {
 
     @Autowired
     ReadingService service;
+    @Autowired
+    AlertService alertService;
 
     @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public Readings storeReadings(@RequestBody Readings readings){
-        return service.storeReadings(readings);
+    public void storeReadings(@RequestBody Readings readings){
+         service.storeReadings(readings);
+         alertService.createAlert(readings);
     }
 
 }
