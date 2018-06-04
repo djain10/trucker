@@ -1,5 +1,7 @@
 package com.trukcer.entity;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -13,6 +15,7 @@ public class Alert {
     private Vehicle vehicle;
     private String message;
     private AlertType type;
+    @CreationTimestamp
     private LocalDateTime time;
 
     public Alert() {

@@ -15,9 +15,9 @@ import java.util.Optional;
 public class ReadingServiceImpl implements ReadingService {
 
     @Autowired
-    ReadingRepository repository;
+    private ReadingRepository repository;
     @Autowired
-    VehicleRepository vehicleRepository;
+    private VehicleRepository vehicleRepository;
 
     @Override
     @Transactional

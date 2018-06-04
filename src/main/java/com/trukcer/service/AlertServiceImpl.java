@@ -25,9 +25,9 @@ import java.util.Optional;
 public class AlertServiceImpl implements AlertService {
 
     @Autowired
-    AlertRespository repository;
+   private AlertRespository repository;
     @Autowired
-    VehicleRepository vehicleRepository;
+    private VehicleRepository vehicleRepository;
 
     @Override
     @Transactional
