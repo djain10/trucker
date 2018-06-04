@@ -1,20 +1,30 @@
 package com.trukcer.entity;
 
+import org.hibernate.annotations.CreationTimestamp;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.time.LocalDateTime;
+
+@Entity
 public class Vehicle {
 
+    @Id
     String vin;
     String make;
-    String year;
-    String redlineRpm;
-    String maxFuelVolume;
-    String lastServiceDate;
+    String model;
+    int year;
+    int redlineRpm;
+    int maxFuelVolume;
+    @CreationTimestamp
+    LocalDateTime lastServiceDate;
 
-    public Vehicle(String make, String year, String redlineRpm, String maxFuelVolume, String lastServiceDate) {
-        this.make = make;
-        this.year = year;
-        this.redlineRpm = redlineRpm;
-        this.maxFuelVolume = maxFuelVolume;
-        this.lastServiceDate = lastServiceDate;
+    public Vehicle(String vin) {
+        this.vin = vin;
+    }
+
+    public Vehicle() {
+
     }
 
     public String getVin() {
@@ -33,35 +43,57 @@ public class Vehicle {
         this.make = make;
     }
 
-    public String getYear() {
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public int getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 
-    public String getRedlineRpm() {
+    public int getRedlineRpm() {
         return redlineRpm;
     }
 
-    public void setRedlineRpm(String redlineRpm) {
+    public void setRedlineRpm(int redlineRpm) {
         this.redlineRpm = redlineRpm;
     }
 
-    public String getMaxFuelVolume() {
+    public int getMaxFuelVolume() {
         return maxFuelVolume;
     }
 
-    public void setMaxFuelVolume(String maxFuelVolume) {
+    public void setMaxFuelVolume(int maxFuelVolume) {
         this.maxFuelVolume = maxFuelVolume;
     }
 
-    public String getLastServiceDate() {
+    public LocalDateTime getLastServiceDate() {
         return lastServiceDate;
     }
 
-    public void setLastServiceDate(String lastServiceDate) {
+
+    public void setLastServiceDate(LocalDateTime lastServiceDate) {
         this.lastServiceDate = lastServiceDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "vin='" + vin + '\'' +
+                ", make='" +  make + '\'' +
+                ", model='" + model + '\'' +
+                ", year='" + year + '\'' +
+                ", redlineRpm='" + redlineRpm + '\'' +
+                ", maxFuelVolume='" + maxFuelVolume + '\'' +
+                ", lastServiceDate='" + lastServiceDate + '\'' +
+                '}';
     }
 }
