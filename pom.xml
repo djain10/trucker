@@ -101,7 +101,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.0.2.RELEASE</version>
                 <configuration>
-                    <mainClass>io.egen.Application</mainClass>
+                    <mainClass>com.trucker.SpringDataApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
